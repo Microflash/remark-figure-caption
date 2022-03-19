@@ -1,0 +1,31 @@
+{
+  "name": "@microflash/remark-figure-caption",
+  "version": "1.0.0",
+  "description": "remark plugin to add images with alt text to figures with captions",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "figure",
+    "caption",
+    "image"
+  ],
+  "repository": "https://github.com/Microflash/remark-figure-caption.git",
+  "bugs": "https://github.com/Microflash/remark-figure-caption/issues",
+	"homepage": "https://github.com/Microflash/remark-figure-caption#readme",
+  "author": "Quang Trinh <khacquang.trinh@gmail.com> (https://tkhquang.dev)",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "hast-util-whitespace": "^2.0.0",
+    "remark-parse": "^10.0.1",
+    "unified": "^10.1.2",
+    "unist-util-remove": "^3.1.0",
+    "unist-util-visit": "^4.1.0"
+  }
+}
