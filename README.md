@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/@microflash/remark-figure-caption)](https://www.npmjs.com/package/@microflash/remark-figure-caption)
 [![license](https://img.shields.io/npm/l/@microflash/remark-figure-caption)](./LICENSE.md)
 
-[remark](https://github.com/remarkjs/remark) plugin to trasnform images with alt text to figures with captions
+[remark](https://github.com/remarkjs/remark) plugin to transform images with alt text to figures with captions
 
 ## Contents
 
