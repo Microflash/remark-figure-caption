@@ -50,7 +50,7 @@ const createNodes = (imageNode, { figureClassName, imageClassName, captionClassN
 	} catch (e) {
 		console.log(
 			'figure-caption-plugin: Failed to parse markdown for image - using plain txt as fallback: ' +
-				imageNode.alt
+			imageNode.alt
 		)
 		figchildren = [
 			{

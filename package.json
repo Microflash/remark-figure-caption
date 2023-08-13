@@ -1,31 +1,44 @@
 {
-  "name": "@microflash/remark-figure-caption",
-  "version": "1.0.0",
-  "description": "remark plugin to add images with alt text to figures with captions",
-  "license": "MIT",
-  "keywords": [
-    "unified",
-    "remark",
-    "remark-plugin",
-    "plugin",
-    "figure",
-    "caption",
-    "image"
-  ],
-  "repository": "https://github.com/Microflash/remark-figure-caption.git",
-  "bugs": "https://github.com/Microflash/remark-figure-caption/issues",
+	"name": "@microflash/remark-figure-caption",
+	"version": "1.0.1",
+	"description": "remark plugin to add images with alt text to figures with captions",
+	"license": "MIT",
+	"keywords": [
+		"unified",
+		"remark",
+		"remark-plugin",
+		"plugin",
+		"figure",
+		"caption",
+		"image"
+	],
+	"repository": "https://github.com/Microflash/remark-figure-caption.git",
+	"bugs": "https://github.com/Microflash/remark-figure-caption/issues",
 	"homepage": "https://github.com/Microflash/remark-figure-caption#readme",
-  "author": "Quang Trinh <khacquang.trinh@gmail.com> (https://tkhquang.dev)",
-  "type": "module",
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
-  "dependencies": {
-    "hast-util-whitespace": "^2.0.0",
-    "remark-parse": "^10.0.1",
-    "unified": "^10.1.2",
-    "unist-util-remove": "^3.1.0",
-    "unist-util-visit": "^4.1.0"
-  }
+	"author": "Quang Trinh <khacquang.trinh@gmail.com> (https://tkhquang.dev)",
+	"type": "module",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"scripts": {
+		"test": "ava"
+	},
+	"dependencies": {
+		"hast-util-whitespace": "^2.0.1",
+		"remark-parse": "^10.0.2",
+		"unified": "^10.1.2",
+		"unist-util-remove": "^3.1.1",
+		"unist-util-visit": "^4.1.2"
+	},
+	"devDependencies": {
+		"ava": "^5.3.1",
+		"rehype-stringify": "^9.0.3",
+		"remark-rehype": "^10.1.0"
+	},
+	"ava": {
+		"files": [
+			"test/**/*.test.js"
+		]
+	}
 }

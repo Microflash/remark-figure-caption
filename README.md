@@ -1,13 +1,17 @@
 # remark-figure-caption
 
 [![npm](https://img.shields.io/npm/v/@microflash/remark-figure-caption)](https://www.npmjs.com/package/@microflash/remark-figure-caption)
+[![regression](https://github.com/Microflash/remark-figure-caption/actions/workflows/regression.yml/badge.svg)](https://github.com/Microflash/remark-figure-caption/actions/workflows/regression.yml)
 [![license](https://img.shields.io/npm/l/@microflash/remark-figure-caption)](./LICENSE.md)
 
 [remark](https://github.com/remarkjs/remark) plugin to transform images with alt text to figures with captions
 
+## Status: Feature complete
+
+This plugin is feature complete. Compatibility updates and patches will be published in future.
+
 ## Contents
 
-- [Contents](#contents)
 - [What's this?](#whats-this)
 - [Install](#install)
 - [Use](#use)
@@ -37,17 +41,31 @@ In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm](https://docs.n
 npm install @microflash/remark-figure-caption
 ```
 
+In Deno, with [esm.sh](https://esm.sh/):
+
+```js
+import remarkFigureCaption from "https://esm.sh/@microflash/remark-figure-caption";
+```
+
+In browsers, with [esm.sh](https://esm.sh/):
+
+```html
+<script type="module">
+  import remarkFigureCaption from "https://esm.sh/@microflash/remark-figure-caption?bundle";
+</script>
+```
+
 ## Use
 
 Say we have the following module `example.js`:
 
 ```js
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkGfm from 'remark-gfm'
-import remarkFigureCaption from '@microflash/remark-figure-caption'
-import remarkRehype from 'remark-rehype'
-import rehypeStringify from 'rehype-stringify'
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkFigureCaption from "@microflash/remark-figure-caption";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
 
 main()
 
@@ -55,12 +73,12 @@ async function main() {
   const file = await unified()
     .use(remarkParse)
     .use(remarkGfm)
-		.use(remarkFigureCaption)
+    .use(remarkFigureCaption)
     .use(remarkRehype)
     .use(rehypeStringify)
-    .process('![Alt text](path-to-image.jpg)')
+    .process("![Alt text](path-to-image.jpg)");
 
-  console.log(String(file))
+  console.log(String(file));
 }
 ```
 
@@ -84,6 +102,8 @@ The following options are available. All of them are optional.
 - `figureClassName`: class for the wrapped `figure` element
 - `imageClassName`: class for the wrapped `img` element
 - `captionClassName`: class for the wrapped `figcaption` element
+
+By default, no classes are added to the `figure`, `img` and `figcaption` elements.
 
 ## Credits
 
