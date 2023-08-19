@@ -3,7 +3,6 @@ import { visit } from "unist-util-visit";
 import { whitespace } from "hast-util-whitespace";
 import { remove } from "unist-util-remove";
 import { fromMarkdown } from "mdast-util-from-markdown";
-import { toString } from "mdast-util-to-string";
 
 /** @type {import("unified").Plugin<[], import("mdast").Root>} */
 export default function remarkFigureCaption(options = {}) {
@@ -43,14 +42,9 @@ export default function remarkFigureCaption(options = {}) {
 const createNodes = (imageNode, { figureClassName, imageClassName, captionClassName }) => {
 	let figchildren = null;
 	try {
-		figchildren = [
-			{
-				type: "text",
-				value: toCaptionContent(imageNode.alt),
-			},
-		];
+		figchildren = fromMarkdown(imageNode.alt).children.flatMap(node => node.children);
 	} catch (e) {
-		console.log(`figure-caption-plugin: Failed to parse image alt-text as string - using raw value as fallback: ${imageNode.alt}`);
+		console.log(`figure-caption-plugin: Failed to parse image alt-text as markdown - using raw value as fallback: ${imageNode.alt}`);
 		figchildren = [
 			{
 				type: "text",
@@ -79,8 +73,6 @@ const createNodes = (imageNode, { figureClassName, imageClassName, captionClassN
 
 	return figure;
 };
-
-const toCaptionContent = (alt) => toString(fromMarkdown(alt));
 
 const hasOnlyImages = (node) => {
 	return node.children.every((child) => {
