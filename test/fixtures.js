@@ -25,6 +25,11 @@ export default [
 		output: `<figure><img src="http://example.com/captioned.png" alt="Captioned image"><figcaption><em>Captioned image</em></figcaption></figure>`
 	},
 	{
+		title: "link with image",
+		input: `[![Image](http://example.com/test.png)](http://example.com)`,
+		output: `<p><a href="http://example.com"><img src="http://example.com/test.png" alt="Image"></a></p>`
+	},
+	{
 		title: "image with no alt text",
 		input: `![](http://example.com/test.png)`,
 		output: `<img src="http://example.com/test.png" alt="">`

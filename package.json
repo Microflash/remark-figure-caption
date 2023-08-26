@@ -1,6 +1,6 @@
 {
 	"name": "@microflash/remark-figure-caption",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "remark plugin to add images with alt text to figures with captions",
 	"license": "MIT",
 	"keywords": [
@@ -32,10 +32,10 @@
 	},
 	"devDependencies": {
 		"ava": "^5.3.1",
-		"rehype-stringify": "^9.0.4",
+		"rehype-stringify": "^10.0.0",
 		"remark-parse": "^10.0.2",
 		"remark-rehype": "^10.1.0",
-		"unified": "^11.0.1"
+		"unified": "^11.0.2"
 	},
 	"ava": {
 		"files": [

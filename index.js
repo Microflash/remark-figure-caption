@@ -25,7 +25,7 @@ export default function remarkFigureCaption(options = {}) {
 			tree,
 			(node) => isImageWithAlt(node),
 			(node, index, parent) => {
-				if (isImageWithCaption(parent)) {
+				if (isImageWithCaption(parent) || isImageLink(parent)) {
 					return;
 				}
 
@@ -97,6 +97,10 @@ const isImageWithCaption = (parent) => {
 		parent.type === "figure" &&
 		parent.children.some((child) => child.type === "figcaption")
 	);
+};
+
+const isImageLink = (parent) => {
+	return (parent.type === "link");
 };
 
 const getClassProp = (className) => {
