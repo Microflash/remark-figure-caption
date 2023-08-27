@@ -6,9 +6,9 @@
 
 [remark](https://github.com/remarkjs/remark) plugin to transform images with alt text to figures with captions
 
-## Status: Feature complete
+## Status: legacy
 
-This plugin is feature complete. Compatibility updates and patches will be published in future.
+> This package is no longer recommended for use. It’s still covered by semantic-versioning guarantees and not yet deprecated, but use of this package should be avoided. Please use remark-rehype to move from remark (markdown) to rehype (HTML) and then replace remark-figure-caption with [`rehype-figure`](https://github.com/Microflash/rehype-figure).
 
 ## Contents
 
